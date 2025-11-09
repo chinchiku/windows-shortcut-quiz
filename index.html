@@ -4,29 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ショートカット学習アプリ</title>
+    
+    <link rel="stylesheet" href="style.css">
     </head>
 <body>
 
-    <h1>ショートカットキー学習アプリ</h1>
+    <div class="container">
+        <h1>ショートカットキー学習アプリ</h1>
 
-    <div class="settings">
-        <h2>1. カテゴリを選ぶ</h2>
-        <select id="category-select">
-            <option value="chrome">Google Chrome</option>
-            <option value="slides">Google スライド</option>
-            <option value="sheets">Google スプレッドシート</option>
-        </select>
+        <div class="settings">
+            <h2>1. カテゴリを選ぶ</h2>
+            <select id="category-select">
+                <option value="chrome">Google Chrome</option>
+                <option value="slides">Google スライド</option>
+                <option value="sheets">Google スプレッドシート</option>
+            </select>
 
-        <h2>2. モードを選ぶ</h2>
-        <select id="mode-select">
-            <option value="quiz">クイズ形式</option>
-            <option value="flashcard">フラッシュカード形式</option>
-        </select>
+            <h2>2. モードを選ぶ</h2>
+            <select id="mode-select">
+                <option value="quiz">クイズ形式</option>
+                <option value="flashcard">フラッシュカード形式</option>
+            </select>
 
-        <br><br>
-
-        <button id="start-button">学習スタート</button>
+            <br> <button id="start-button">学習スタート</button>
+        </div>
     </div>
-
+    <script src="data.js"></script>
     </body>
 </html>
