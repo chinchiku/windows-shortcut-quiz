@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学習中...</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* .container は style.css で定義済み */
+
+        #study-area {
+            min-height: 150px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #question-text {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        #answer-text {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #007BFF;
+            /* 最初は答えを隠しておきます */
+            display: none; 
+        }
+
+        #quiz-options {
+            margin-top: 15px;
+        }
+        
+        /* クイズの選択肢ボタン（JSで動的に生成） */
+        .quiz-option {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .quiz-option:hover {
+            background-color: #e0e0e0;
+        }
+        
+        /* フラッシュカード用（JSでスタイルを切り替え） */
+        #study-area.flashcard-mode {
+            cursor: pointer;
+        }
+
+    </style>
+    </head>
+<body>
+
+    <div class="container">
+        <h2 id="study-title">学習モード</h2>
+        
+        <div id="study-area">
+            <div id="question-text">（ここに問題が表示されます）</div>
+            
+            <div id="answer-text">（ここに答えが表示されます）</div>
+
+            <div id="quiz-options"></div>
+        </div>
+
+        <div id="controls">
+            <button id="show-answer-btn" style="display: none;">答えを見る</button>
+            
+            <button id="next-btn" style="display: none;">次の問題へ</button>
+        </div>
+
+        <hr>
+        <a href="index.html">トップに戻る</a>
+
+        </div>
+
+    <script src="data.js"></script>
+    <script src="main.js"></script> 
+    </body>
+</html>
