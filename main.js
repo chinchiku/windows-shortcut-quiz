@@ -210,3 +210,19 @@ function shuffleArray(array) {
     }
     return array;
 }
+// (main.js の一番下に追加)
+
+// ■ 難易度レベルを星に変換する関数
+function getStarRating(level) {
+    switch (level) {
+        case 1:
+            return '★☆☆';
+        case 2:
+            return '★★☆';
+        case 3:
+            return '★★★';
+        default:
+            // levelが未設定の場合は、とりあえず★1つ
+            return '★☆☆';
+    }
+}
