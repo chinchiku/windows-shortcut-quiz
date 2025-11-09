@@ -1,7 +1,7 @@
 // main.js の中身
 
 // ページが読み込まれたときに実行される処理
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContented', () => {
 
     // -------------------------------------------------
     // ① トップページ(index.html)にいる場合の処理
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // クイズモード
             nextBtn.style.display = 'none'; // 次へボタンは隠す
             showAnswerBtn.style.display = 'none'; // 答えを見るボタンも隠す
-            loadQuizQuestion();
+            QuizQuestion();
 
         } else {
             // フラッシュカードモード
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
             quizOptions.style.display = 'none'; // クイズ選択肢は使わない
             nextBtn.style.display = 'none'; // 次へボタンは隠す
             showAnswerBtn.style.display = 'block'; // 答えを見るボタンを表示
-            loadFlashcard();
+            Flashcard();
 
             // 「答えを見る」ボタンの処理
             showAnswerBtn.addEventListener('click', showAnswer);
@@ -96,9 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // 次の問題を読み込む
             if (mode === 'quiz') {
-                loadQuizQuestion();
+                QuizQuestion();
             } else {
-                loadFlashcard();
+                Flashcard();
             }
 
             // 状態をリセット
@@ -116,9 +116,12 @@ document.addEventListener('DOMContentLoaded', () => {
             quizOptions.style.display = 'block'; // 選択肢を表示
 
             const q = questions[currentQuestionIndex];
-            questionText.textContent = q.q; // 問題文を設定
+            // ▼▼▼ 変更後 ▼▼▼
+            questionText.innerHTML = `${q.q} <span class="stars">${getStarRating(q.level)}</span>`;
+            // ▲▲▲ 変更後 ▲▲▲
             
             // --- 選択肢を作成 ---
+            // ( ... 以下省略 ... )
             quizOptions.innerHTML = ''; // 前の選択肢をクリア
             const options = createQuizOptions(q.a); // 正解を含む選択肢リストを作成
             
@@ -175,7 +178,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // ■ フラッシュカードを読み込む関数
         function loadFlashcard() {
             const q = questions[currentQuestionIndex];
-            questionText.textContent = q.q; // 問題文（カード表）
+            // ▼▼▼ 変更後 ▼▼▼
+            questionText.innerHTML = `${q.q} <span class="stars">${getStarRating(q.level)}</span>`;
+            // ▲▲▲ 変更後 ▲▲▲
             answerText.textContent = q.a; // 答え（カード裏）
         }
 
